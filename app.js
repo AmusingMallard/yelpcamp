@@ -6,10 +6,9 @@ const express = require("express"),
   passport = require("passport"),
   LocalStrategy = require("passport-local"),
   methodOverride = require("method-override"),
-  Campground = require("./models/campground"),
-  Comment = require("./models/comment"),
-  User = require("./models/user"),
-  seedDb = require("./seeds");
+  User = require("./models/user");
+
+// const seedDb = require("./seeds"); // Used for seeding the database
 
 app.locals.moment = require("moment");
 
