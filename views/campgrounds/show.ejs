@@ -18,7 +18,9 @@
 					<h4><a><%= campground.name %></a></h4>
 					<p><%= campground.description %></p>
 					<p>
-						<em>Submitted by: <a href="/users/<%=campground.author.id%>"><%= campground.author.username %></a>, <%= moment(campground.createdAt).fromNow() %></em>
+						<em>Submitted by: 
+							<a href="/users/<%=campground.author.id%>"><%= campground.author.username %></a>, <%= moment(campground.createdAt).fromNow() %>
+						</em>
 					</p>
 					<% if(currentUser && campground.author.id.equals(currentUser._id) || currentUser && currentUser.isAdmin) {%>
 						<a class="btn btn-xs btn-warning" href="/campgrounds/<%=campground._id%>/edit">Edit</a>
@@ -32,7 +34,13 @@
 			<!-- COMMENT SECTION -->
 			<div class="well">
 				<div class="text-right">
-					<a class="btn btn-success pull-right" role="button" data-toggle="collapse" href="#collapseComment" aria-expanded="false" aria-controls="collapseComment">
+					<a 
+						class="btn btn-success pull-right" 
+						role="button" 
+						data-toggle="collapse" 
+						href="#collapseComment" 
+						aria-expanded="false" 
+						aria-controls="collapseComment">
 						<span class="glyphicon glyphicon-plus" aria-hidden="true">
 						</span> 
 						Add new comment
@@ -49,7 +57,14 @@
 									<input class="form-control" type="text" disabled value="<%= currentUser.username %>">
 								</div>
 								<div class="form-group">
-									<textarea class="form-control" name="comment[text]" placeholder="write your comment..." form="add-comment-form" rows="5" cols="70"></textarea>
+									<textarea 
+										class="form-control" 
+										name="comment[text]" 
+										placeholder="write your comment..." 
+										form="add-comment-form" 
+										rows="5" 
+										cols="70">
+									</textarea>
 								</div>
 								<div class="form-group">
 									<button class="btn btn-success btn-sm">Comment <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
@@ -105,7 +120,12 @@
 												<input class="form-control" type="text" disabled value="<%= currentUser.username %>">
 											</div>
 											<div class="form-group">
-												<textarea class="form-control" name="comment[text]" placeholder="Your comment text..." form="edit-comment-form<%= comment._id %>" rows="5" cols="70"><%= comment.text %></textarea>
+												<textarea 
+													class="form-control" 
+													name="comment[text]" 
+													placeholder="Your comment text..." 
+													form="edit-comment-form<%= comment._id %>" rows="5" cols="70"><%= comment.text %>
+												</textarea>
 											</div>
 											<div class="form-group">
 												<button class="btn btn-warning btn-sm">Edit commment <span class="glyphicon glyphicon-comment" aria-hidden="true"></span></button>
